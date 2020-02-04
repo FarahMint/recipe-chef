@@ -33,12 +33,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ![Screen Shot 2020-02-04 at 10 31 58 PM](https://user-images.githubusercontent.com/18241226/73794097-91389c80-479f-11ea-88f7-41f9d5cd1616.png)
 
  2. **`NAVBAR DISPLAY`**
-<img  align="left" src="https://user-images.githubusercontent.com/18241226/73794094-91389c80-479f-11ea-9e65-d480094f0f6b.png" alt="tablet-recipe-chef-nav" title="1tablet-recipe-chef-nav"/>     
+  
+<img src="https://user-images.githubusercontent.com/18241226/73794094-91389c80-479f-11ea-9e65-d480094f0f6b.png" alt="toggle bookmark" title="toggle bookmark"/>   
 
  3.**`RECIPES CATEGORY SELECTED DISPLAY`**
 <img src="https://user-images.githubusercontent.com/18241226/73794095-91389c80-479f-11ea-9ed0-06b61f92f166.png" alt="tablet-recipe-chef-category-selected" title="tablet-recipe-chef-category-selected"/>        
 
  4. **`RECIPES BOOKMARKED`**   
-<img src="https://user-images.githubusercontent.com/18241226/73794094-91389c80-479f-11ea-9e65-d480094f0f6b.png" alt="toggle bookmark" title="toggle bookmark"/>     
+ <img  align="left" src="https://user-images.githubusercontent.com/18241226/73794094-91389c80-479f-11ea-9e65-d480094f0f6b.png" alt="tablet-recipe-chef-nav" title="1tablet-recipe-chef-nav"/>      
 
  
