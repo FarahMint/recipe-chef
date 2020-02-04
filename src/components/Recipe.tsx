@@ -33,7 +33,7 @@ export default function Recipe(props:any):JSX.Element {
     return (   
         <section>
         {state.recipe && (
-          <div className="container">
+          <div className="container recipe-container">
             <div>
               <img src={state.recipe.strMealThumb} alt={state.recipe.strMeal}/>
               <h3>{state.recipe.strMeal}</h3>

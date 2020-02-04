@@ -12,7 +12,7 @@ export default function Home(props:any): JSX.Element {
   
     return (
 
-      <section >
+      <section className="container">
       <ul className="grid-container">
      {
        state.categories.map((item : ICategory) =>{

@@ -9,6 +9,7 @@ export default function Favourites():JSX.Element  {
     const {state }=useContext(Store);
 
     return (
+        <section className="container">
         <div className="grid-container">
              { (state.favourites && state.favourites.length > 0 )? null :  <h1>Select your favorite recipes</h1>}
 
@@ -22,5 +23,6 @@ export default function Favourites():JSX.Element  {
                </div>)
             )}
         </div>
+        </section>
     )
 }

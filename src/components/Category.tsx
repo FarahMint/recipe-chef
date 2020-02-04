@@ -22,7 +22,7 @@ useEffect(()=>{
    const { meals } = state.selectedCat;
 
     return (
-    <section>
+    <section className="container category-container">
        <h2 className="title__recipes-list">{category}</h2>
        <div className="grid-container">
             {meals&& meals.map((item: IRecipe) => {
