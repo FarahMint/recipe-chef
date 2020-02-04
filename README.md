@@ -1,45 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Recipe Chef
 
-## Available Scripts
+Web app created with:
+- React.js
+- React Context API for the state management
+- React-router
+- Typescript
+- Data from themealdb API  
+- LocalStorage
 
-In the project directory, you can run:
+## 🧐 What user can do?
+A user of 'Recipe Chef' can do the following:
+- [x] Browse all the available recipes 
+- [x] Browse all the recipes category
+- [x] View all recipes from a selected category
+- [x] View a recipe details
+- [x] Lookup a recipe using text-based search
+- [x] Use Recipe Chef on their mobile device
+- [x] Bookmark a selected recipe 
+- [x] Remove a selected recipe from preious bookmark
 
-### `npm start`
-
-Runs the app in the development mode.<br />
+## `npm start`
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screens Shot
 
-### `npm test`
+ 1. **`RECIPE CATEGORY LIST DISPLAY`**
+<img src="https://user-images.githubusercontent.com/18241226/73794093-90a00600-479f-11ea-9d58-b164060ef532.png" alt="tablet-recipe-chef" title="tablet-recipe-chef"/> 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  
+ 
+![Screen Shot 2020-02-04 at 10 31 58 PM](https://user-images.githubusercontent.com/18241226/73794097-91389c80-479f-11ea-88f7-41f9d5cd1616.png)
 
-### `npm run build`
+ 2. **`NAVBAR DISPLAY`**
+<img  align="left" src="https://user-images.githubusercontent.com/18241226/73794094-91389c80-479f-11ea-9e65-d480094f0f6b.png" alt="tablet-recipe-chef-nav" title="1tablet-recipe-chef-nav"/>     
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 3.**`RECIPES CATEGORY SELECTED DISPLAY`**
+<img src="https://user-images.githubusercontent.com/18241226/73794095-91389c80-479f-11ea-9ed0-06b61f92f166.png" alt="tablet-recipe-chef-category-selected" title="tablet-recipe-chef-category-selected"/>        
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+ 4. **`RECIPES BOOKMARKED`**   
+<img src="https://user-images.githubusercontent.com/18241226/73794094-91389c80-479f-11ea-9e65-d480094f0f6b.png" alt="toggle bookmark" title="toggle bookmark"/>     
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# recipe-chef
+ 
