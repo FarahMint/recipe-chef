@@ -1,13 +1,464 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --primary-color:  #2ebb91;
+  --secondary-color:#7cd7bc;
+  --mainBlack: #333;
+  --mainWhite: #fefefe;
+  --mainGreen:  #177e89;
+  --mainRose: #ff416c;
+  --mainOrange: #ff4b2b;
+  --mainPurple: #595ad4;
+  --darkPurple: #343480;
+  /* --mainPurple: #521751; */
+  --lightGrey:#DBE3E7;
+  --mainBlue: #1B7AF6;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  box-sizing:border-box;
+  padding:0;
+  margin:0;
 }
+
+html, body{
+height:100vh;
+margin: 0;
+}
+
+ body{
+  font-family:"Roboto", sans-serif;
+   display:flex;
+   flex-direction:column;
+}
+
+a{
+  text-decoration: none;
+  color: var( --mainBlack);
+}
+button{
+  border:none;
+outline: none;
+}
+li{
+  list-style:none;
+}
+
+.content{
+  min-height: calc(100vh - 35px);
+  margin-bottom: 25px;
+}
+
+.container{
+  width:90%;
+   margin:0 auto;
+  padding:10px;
+  overflow:none;
+}
+
+.app-header{
+ color: var(--primary-color);
+  box-shadow: 3px 3px 10x #888;
+  background-color:#fff;
+ }
+
+.app-header .container{
+ display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:15px 10px;
+ }
+
+ .container div{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+ }
+
+/* .app-header .logo{
+ width:170px;
+  margin-bottom:16px;
+   
+ } */
+ /* NAV */
+
+ .nav-links{
+   display:flex;
+   list-style: none;
+ }
+ .nav-links li{
+align-self: center;
+ }
+ /* NAV */
+
+.app-header .form-container  {
+  margin-top: 1rem;
+}
+
+.app-header .form-container form {
+  display:flex;
+  width:100%;
+  padding: 1rem;
+  border: 1px #ccc solid;
+}
+.app-header .form-container form input[type="text"]{
+  padding:7px;
+  width:100%;
+  border:0;
+}
+
+.icon-search{
+  font-size: 1.5rem;
+}
+
+.subheader{
+  background-color: var(--secondary-color);
+  color:#fff;
+  box-shadow: 3px 3px 10x #888;
+  margin: 0 auto 1rem auto;
+  width:90%;
+  font-size:14px;
+  padding:10px;
+  display:flex;
+    align-items:center ;
+  justify-content:space-between;;
+  
+}
+.subheader p{
+margin:4px;
+  
+}
+
+.subheader .img{
+  width:40px;
+  height:40px;
+  
+}
+
+/*
+ * ==================== BACKDROP ====================
+*/
+
+.backDrop{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,.3);
+  z-index:100;    
+}
+/*
+ * ==================== NAVBAR ====================
+*/
+
+ /* NAVBAR*/
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.75rem 2rem;
+    z-index: 1;
+    background: #2b2a2a;
+  }
+  
+  .toolbar__navigation{
+    display: flex;
+    align-items:center;
+  } 
+  
+    
+  /*** toggle btn sm screen ***/
+  
+   .toggle-button{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 25px;
+    width: 30px;
+    background: transparent;
+    border: none;
+    padding:0;
+  
+  }
+   
+  .toggle-button__line{
+    width: 30px;
+    height: 2px;
+    background: #000;
+    transition: var(--mainTransition);
+  }
+  
+  .toolbar_toogle-button{
+    position: absolute;
+    right: 20px;
+   
+  }
+  
+  /* change shape form of hambuger menu to x for close menu*/
+  .toggle-button__line.active:nth-child(1){
+    opacity:0;
+  }
+  .toggle-button__line.active:nth-child(2){
+   transform: rotate(45deg);
+  }
+  .toggle-button__line.active:nth-child(3){
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 18px;
+  }
+  
+  
+ 
+   
+    
+  .nav-link{
+    color:#fefefe;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    color: var(--mainWhite);
+    transition: var(--mainTransition);
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: var(--mainSpacing);
+    }
+    .nav-link:hover ,
+    .nav-link:active{
+        background: #fefefe;
+       color: #595ad4;
+       padding-left:1rem;
+       padding-right:1rem;
+    }    
+ 
+  /* END NAVBAR*/
+  
+
+
+/*
+ * ==================== DRAWER ====================
+*/
+.side-drawer{
+  background: #3b3b3b;
+  box-shadow: 1px 0px  7px rgba(0,0,0,0.5);
+  height: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 70%;
+  max-width: 200px;
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform .3s ease-out;
+}
+
+
+.side-drawer.open{
+  transform: translateX(0);
+}
+
+
+
+.side-drawer ul{
+  margin-top: 3rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+.side-drawer li{
+margin:  .5rem 0;
+width: 100%;
+cursor: pointer;
+
+
+}
+.side-drawer li:first-child{
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.side-drawer li a{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+
+  color: var(--mainWhite);
+    text-decoration: none;
+}
+.side-drawer li a .logo{
+  color: var(--secondary-color);
+    text-decoration: none;
+    font-size:1.2rem;
+}
+
+/*
+ * ==================== END DRAWER ====================
+*/
+
+
+/*
+ * ==================== GRID CONTAINER ====================
+*/
+.grid-container {
+
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:10px;
+}
+
+.grid-container .item{
+  position:relative;
+   display:flex;
+  flex-direction:column;
+  text-align: center;
+  padding:10px;
+  box-shadow: 1px 1px 2px #ccc; 
+  border-radius: 1rem;
+}
+
+.grid-container .item h2{
+  font-weight: 200;
+}
+.grid-container .item h4{
+ margin-bottom:5px;
+}
+
+.grid-container .item p{
+ font-size:14px;
+  color: var(--secondary-color);
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.grid-container .item img{
+  width:100%;
+
+}
+/*
+ * ==================== END GRID CONTAINER ====================
+*/
+
+/*
+ * ====================  RECIPE COMPO ====================
+*/
+ 
+section .container{
+  position:relative;
+  display:grid;
+  grid-template-columns:  1fr;
+   align-items:center ;
+   justify-content:center;
+   padding:15px 10px;
+  }
+
+  section .container div:first-of-type{
+  display:flex;
+  flex-direction: column;
+    }
+  section .container div h3,
+  ul.list-group-item {
+margin: 2rem 0;
+    }
+
+section .container img{
+  width: 100%;
+  }
+
+ 
+  section .container div:last-of-type{
+    line-height: 2;
+    font-size: 1.25rem;
+    text-align:justify;
+         }
+ 
+
+button .btn-fav{
+    position:absolute;
+    top:0;
+    right:0;
+    color: #f9a7d4;
+    font-size: 2rem;
+    border: none;
+  }
+button .btn-fav.active{
+   color: #e82e95;
+  }
+/* LIST INGREDIENTS RECIPE COMPO */
+
+ul.list-group-item li{
+border:  1px solid #476b2d;
+border-radius: 5px;
+background-color: #fff;
+display: inline-block;
+color: #2d2013;
+font-weight: bold;
+padding: 5px;
+margin: 0 5px 5px 0;
+}
+/* END LIST INGREDIENTS RECIPE COMPO */
+/*
+ * ====================  END RECIPE COMPO ====================
+*/
+
+
+/*
+ * ====================  FOOTER====================
+*/
+.app-footer{
+  background:#f4f4f4;
+  text-align:center;
+  color:#444;
+  padding:10px;
+  font-size:14px;
+height: 50px;
+position:sticky;
+}
+/*
+ * ====================  END FOOTER ====================
+*/
+
+/*
+ * ==================== MEDIA QUERIES ====================
+*/
+
+@media(min-width:835px){
+  section .container{
+    grid-template-columns: repeat(2,1fr)  ;
+    grid-template-rows: [row] auto [row] auto ;
+    grid-gap: 1rem;
+    }
+  
+    section .container div:first-of-type{
+      grid-column: col / span 2;
+      grid-row: row ;
+      }
+  
+    ul.list-group-item {
+      margin:0;
+      grid-column: col 3 / span 2 ;
+      grid-row: row ;
+    }
+  
+    section .container div:last-of-type{
+      grid-column: col / span 4;
+      grid-row: row 3;
+    }
+  
+}
+ 
+@media(min-width:768px){
+  .grid-container{
+    grid-template-columns:repeat(3,1fr);
+  }
+  
+   .grid-container item .img{
+  width: 60px;
+  }  
+}
+ 
