@@ -45,7 +45,7 @@ export default function Subheader(props:any): JSX.Element {
    * need to work on the logic for the back button
    */
 
-   const title = DisplayText(location.pathname)
+  const title = DisplayText(location.pathname)
     return (
        <>
         <div className="subheader">

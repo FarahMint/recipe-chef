@@ -1,21 +1,16 @@
-import React 
-//  , {useContext, useEffect} 
-from 'react';
+import React  from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import './App.css';
-
-  // import {Store } from "./store/reducer";
-  // import { ICategory} from "./interfaces";
  
   import Header from "./components/Header";
   import Footer from "./components/Footer";
   import Home from "./components/Home";
-
   import Category from "./components/Category";
   import RecipesList from "./components/RecipesList";
   import Recipe from "./components/Recipe";
   import Favourites from "./components/Favourites";
+  import NoMatchPage from "./components/NoMatchPage";
 
 const App = () => {
 
@@ -26,36 +21,32 @@ const App = () => {
       <Header/>
       <Switch>
         <Route  
-          exact 
-          strict
           path="/" 
+          exact
           component={Home}/>
         <Route 
           exact
-          strict
-          path="/search/:query" 
-          component={RecipesList}
-              />
-        <Route 
-          exact
-          strict
           path="/favourites" 
-          component={Favourites}
-              />
+          component={Favourites}/>
+
+        <Route 
+          path="/search/:query" 
+          exact
+          component={RecipesList}/>
 
         <Route  
-          exact
-          strict 
           path="/:category" 
+          exact
           component={Category}/>
         
         <Route 
-          exact
-          
           path="/:category/:recipe_id/" 
-          component={Recipe}
-              />
-        </Switch>
+          exact
+          component={Recipe}/>
+        <Route 
+          component={NoMatchPage} />
+
+      </Switch>
       </div>
       <Footer/>
     </div>
