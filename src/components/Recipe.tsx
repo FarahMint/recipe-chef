@@ -11,6 +11,7 @@ export default function Recipe(props:any):JSX.Element {
 
     useEffect(()=>{
       getOneRecipe(id);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
        },[]);
 
 //   const ingredients= this.addMealToDOM(state);

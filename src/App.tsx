@@ -10,7 +10,7 @@ import './App.css';
   import RecipesList from "./components/RecipesList";
   import Recipe from "./components/Recipe";
   import Favourites from "./components/Favourites";
-  import NoMatchPage from "./components/NoMatchPage";
+  import Error from "./components/Error";
 
 const App = () => {
 
@@ -43,8 +43,9 @@ const App = () => {
           path="/:category/:recipe_id/" 
           exact
           component={Recipe}/>
-        <Route 
-          component={NoMatchPage} />
+         {/* ERROR  - when no match*/}
+        
+         <Route component={Error}></Route>
 
       </Switch>
       </div>

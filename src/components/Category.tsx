@@ -14,7 +14,7 @@ export default function Category(props:any):JSX.Element {
 
 useEffect(()=>{
     fetchCategorySelected(category);
- 
+   // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    const { meals } = state.selectedCat;
