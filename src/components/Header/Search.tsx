@@ -7,7 +7,7 @@ import {
 /**ICON */
 import {FaSearch } from 'react-icons/fa';
 /**STORE */
-import {Store } from '../store/reducer';
+import {Store } from '../../store/reducer';
 
  
 function Search(props:any): JSX.Element {
@@ -22,7 +22,8 @@ function Search(props:any): JSX.Element {
       const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();        
         searchRecipes(input);
-         props.history.push("/search")
+       
+         props.history.push(`/search/${input}`);
 
         // NEED TO WORK ON THAT LOGIC
         // if (!props.error.msg && !props.error.show){
@@ -48,7 +49,7 @@ function Search(props:any): JSX.Element {
             type="text" 
             value={input}
            onChange={(e)=>   setInput(e.target.value)}
-            placeholder="input ingredients to find recipe...."
+            placeholder="look for a recipe..."
             className="search"
           />
         

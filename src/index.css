@@ -1,16 +1,8 @@
 :root{
-  --primary-color:  #2ebb91;
-  --secondary-color:#7cd7bc;
+  --primary-color:  #f93f23;
+  --lightOrange: rgba(249, 63, 35,.5);
   --mainBlack: #333;
   --mainWhite: #fefefe;
-  --mainGreen:  #177e89;
-  --mainRose: #ff416c;
-  --mainOrange: #ff4b2b;
-  --mainPurple: #595ad4;
-  --darkPurple: #343480;
-  /* --mainPurple: #521751; */
-  --lightGrey:#DBE3E7;
-  --mainBlue: #1B7AF6;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -23,15 +15,16 @@
   margin:0;
 }
 
-html, body{
-height:100vh;
-margin: 0;
-}
+  html, body{
+  height:100vh;
+  margin: 0;
+  }
+/*GLOBAL*/
 
- body{
+body{
   font-family:"Roboto", sans-serif;
-   display:flex;
-   flex-direction:column;
+  display:flex;
+  flex-direction:column;
 }
 
 a{
@@ -55,10 +48,30 @@ li{
 
 .container{
   width:90%;
-   margin:0 auto;
+  margin:0 auto;
   padding:10px;
   overflow:none;
 }
+
+
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainBlack);
+  background: var(  --mainWhite);
+  padding: 0.4rem 0.9rem;
+  border: 3px solid var(  --mainWhite);
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+
+/* END GLOBAL */
 
 .app-header{
  color: var(--primary-color);
@@ -79,11 +92,10 @@ li{
   align-items: center;
  }
 
-/* .app-header .logo{
- width:170px;
-  margin-bottom:16px;
+.app-header .logo{
+color:var(--primary-color);
    
- } */
+ }
  /* NAV */
 
  .nav-links{
@@ -111,13 +123,16 @@ align-self: center;
   border:0;
   font-size:1.5rem;
 }
+.app-header .form-container form > input[type="text"]:focus {
+ border-bottom: 1px solid var(--primary-color);
+}
 
 .icon-search{
   font-size: 1.5rem;
 }
 
 .subheader{
-  background-color: var(--secondary-color);
+  background-color: rgba(0,0,0,.8);
   color:#fff;
   box-shadow: 3px 3px 10x #888;
   margin: 0 auto 1rem auto;
@@ -129,15 +144,17 @@ align-self: center;
   justify-content:space-between;;
   
 }
-.subheader p{
-margin:4px;
-  
+.subheader a{
+color:#fff;  
 }
 
-.subheader .img{
-  width:40px;
-  height:40px;
-  
+.subheader p{
+text-transform:uppercase; 
+text-align:center!important;
+align-self: center; 
+}
+.subheader svg.btn-fav{
+  color: #e82e95;
 }
 
 /*
@@ -295,7 +312,7 @@ cursor: pointer;
     text-decoration: none;
 }
 .side-drawer li a .logo{
-  color: var(--secondary-color);
+  color: var(--lightOrange);
     text-decoration: none;
     font-size:1.2rem;
 }
@@ -325,8 +342,9 @@ cursor: pointer;
   border-radius: 1rem;
 }
 
-.grid-container .item h2{
+.grid-container .item h3{
   font-weight: 200;
+  margin:1rem;
 }
 .grid-container .item h4{
  margin-bottom:5px;
@@ -341,8 +359,30 @@ cursor: pointer;
 
 .grid-container .item img{
   width:100%;
-
 }
+
+
+.grid-container .item:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.grid-container .item:hover img{
+  opacity: 0.3;
+}
+
+.grid-container .recipes-link{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0);
+  transition: all 0.3s linear;
+}
+
+.grid-container .item:hover .recipes-link{
+  transform: translate(-50%, -50%) scale(1);
+}
+ 
+
+
 /*
  * ==================== END GRID CONTAINER ====================
 */
@@ -385,9 +425,11 @@ button .btn-fav{
     position:absolute;
     top:0;
     right:0;
-    color: #f9a7d4;
+    color: rgba(0,0,0,.8);
     font-size: 2rem;
     border: none;
+    cursor: pointer;
+    z-index:100;
   }
 button .btn-fav.active{
    color: #e82e95;
@@ -465,11 +507,18 @@ position:sticky;
  
 @media(min-width:768px){
   .grid-container{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit, minmax(255px, 1fr));
   }
   
    .grid-container item .img{
   width: 60px;
   }  
+
+
+/* favourites component */
+
+.grid-container .item.favourite{
+  max-width: 255px;
+}
 }
  

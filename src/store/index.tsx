@@ -26,7 +26,9 @@ import {
       /* if localState does not exist or empty fetch state from initialState
       !localState ? initialState  : localState
       */
-      const [state, dispatch]= useReducer(recipesReducer,  !localState ? initialState  : localState );
+     
+     
+      const [state, dispatch]= useReducer(recipesReducer,localState ? initialState  : localState );
 
       
         const fetchDataAction = async ()=>{

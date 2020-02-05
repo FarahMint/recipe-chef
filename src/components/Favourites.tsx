@@ -10,16 +10,17 @@ export default function Favourites():JSX.Element  {
 
     return (
         <section className="container">
-        <div className="grid-container">
              { (state.favourites && state.favourites.length > 0 )? null :  <h1>Select your favorite recipes</h1>}
+        <div className="grid-container">
 
             {state.favourites.map((item: IRecipeDetails) =>(   
-                <div key={item.idMeal} className="item">
+                <div key={item.idMeal} className="item favourite">
                    <img src={item.strMealThumb} alt={item.strMeal}/>
                    <ToggleFavRecipes recipe= {item} />
-                   <Link to={`/selection/${item.strCategory}/${item.idMeal}`}>
+              
                    <h3> {item.strMeal}</h3>  
-                   </Link>
+                   <Link to={`/${item.strCategory}/${item.idMeal}`} className="btn-primary recipes-link">details
+                      </Link>
                </div>)
             )}
         </div>

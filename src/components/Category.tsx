@@ -2,9 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import {Store } from "../store/reducer";
 import { Link } from "react-router-dom";
 
-import ToggleFavRecipes from "./ToggleFavRecipes";
-
-  import { IRecipe} from "../interfaces";
+import { IRecipe} from "../interfaces";
 
 
 
@@ -23,21 +21,19 @@ useEffect(()=>{
 
     return (
     <section className="container category-container">
-       <h2 className="title__recipes-list">{category}</h2>
        <div className="grid-container">
             {meals&& meals.map((item: IRecipe) => {
               return (
                 <div className="item"
                   key={item.idMeal}
                 >
-                  <ToggleFavRecipes
-                  recipe= {item} />
                     <div>
-                      <Link to={`/selection/${category}/${item.idMeal}`}>
                         <img
                           src={item.strMealThumb}
                           alt={item.strMeal}/>
                           <h3>{item.strMeal}</h3>
+
+                          <Link to={`/${category}/${item.idMeal}`} className="btn-primary recipes-link">details
                       </Link>
                 
                  

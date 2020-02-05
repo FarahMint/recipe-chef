@@ -31,16 +31,27 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Screens Shot
 
  1. **`RECIPE CATEGORY LIST DISPLAY`**
-<img src="https://user-images.githubusercontent.com/18241226/73794093-90a00600-479f-11ea-9d58-b164060ef532.png" alt="tablet-recipe-chef" title="tablet-recipe-chef"/> 
+<img src="https://user-images.githubusercontent.com/18241226/73870047-47a18d80-4843-11ea-8919-31f6350b7639.png" alt="tablet-recipe-chef" title="tablet-recipe-chef"/> 
+<img src="https://user-images.githubusercontent.com/18241226/73870058-4a9c7e00-4843-11ea-972c-3c2807115432.png" alt="tablet-recipe-chef" title="tablet-recipe-chef"/> 
 
  2. **`NAVBAR DISPLAY`**
   
 <img src="https://user-images.githubusercontent.com/18241226/73794094-91389c80-479f-11ea-9e65-d480094f0f6b.png" alt="toggle bookmark" title="toggle bookmark"/>   
 
- 3.**`RECIPES CATEGORY SELECTED DISPLAY`**
-<img src="https://user-images.githubusercontent.com/18241226/73794095-91389c80-479f-11ea-9ed0-06b61f92f166.png" alt="tablet-recipe-chef-category-selected" title="tablet-recipe-chef-category-selected"/>        
+ 3. **`RECIPES CATEGORY SELECTED DISPLAY`**
+<img src="https://user-images.githubusercontent.com/18241226/73870063-4c664180-4843-11ea-9a49-f60590f528b2.png" alt="tablet-recipe-chef-category-selected" title="tablet-recipe-chef-category-selected"/>   
+<img src="https://user-images.githubusercontent.com/18241226/73870070-4ff9c880-4843-11ea-8ed3-4996306e5271.png" alt="tablet-recipe-chef-category-selected" title="tablet-recipe-chef-category-selected"/>        
 
- 4. **`RECIPES BOOKMARKED`**   
- <img  align="left" src=https://user-images.githubusercontent.com/18241226/73794097-91389c80-479f-11ea-88f7-41f9d5cd1616.png alt="tablet-recipe-chef-nav" title="1tablet-recipe-chef-nav"/>      
+ 4. **`RECIPES DETAILS & BOOKMARKED`**   
+ <img  align="left" src="https://user-images.githubusercontent.com/18241226/73870082-54be7c80-4843-11ea-83a4-384a0a641657.png" alt="tablet-recipe-chef-nav" title="1tablet-recipe-chef-nav"/>       
+ <img  align="left" src="https://user-images.githubusercontent.com/18241226/73870087-5720d680-4843-11ea-9c2b-6499699ef2fe.png" alt="tablet-recipe-chef-nav" title="1tablet-recipe-chef-nav"/>      
 
+  5. **`RECIPES FAVOURITES BOOKMARKED`**   
+ <img  align="left" src="https://user-images.githubusercontent.com/18241226/73870096-59833080-4843-11ea-8ba6-51100c938f95.png" alt="tablet-recipe-chef-nav" title="1tablet-recipe-chef-nav"/>       
+ <img  align="left" src="https://user-images.githubusercontent.com/18241226/73870102-5c7e2100-4843-11ea-98e7-962b614e0bd1.png" alt="tablet-recipe-chef-nav" title="1tablet-recipe-chef-nav"/> 
+  <img  align="left" src="https://user-images.githubusercontent.com/18241226/73870107-5daf4e00-4843-11ea-9a52-002e79a8441d.png" alt="tablet-recipe-chef-nav" title="1tablet-recipe-chef-nav"/> 
+
+  
  
+![Screen Shot 2020-02-05 at 6 10 46 PM](https://user-images.githubusercontent.com/18241226/73870112-5ee07b00-4843-11ea-903c-cb4edf9910d6.png)
+![Screen Shot 2020-02-05 at 6 11 07 PM](https://user-images.githubusercontent.com/18241226/73870118-6142d500-4843-11ea-9c12-b4ea613aed30.png)

@@ -19,82 +19,44 @@ import './App.css';
 
 const App = () => {
 
-//  const {state, fetchDataAction}=useContext(Store)
-
-//  const fetchDataAction = async ()=>{
-//   const URL = `https://www.themealdb.com/api/json/v1/1/categories.php`;
-//    const data = await fetch(URL);
-   
-//    const dataJSON = await data.json();
- 
-//    return dispatch({
-//      type:"FETCH_CATEGORIES",
-//      payload: dataJSON.categories
-//    })
-//  }
-
-//  useEffect(()=>{
-//   state.categories.length === 0 && fetchDataAction(); 
-//  });
- 
-//  const toggleFavAction= (category : ICategory ): IAction => {
-//  const catFav = state.favourites.includes(category);
-//  let favWithoutCat;
-
-//  let dispatchObj={
-//   type:"ADD_FAV",
-//   payload:category
-//  }
-
-//    if(catFav){
-//  favWithoutCat= state.favourites.filter((c:ICategory ) => c.idCategory !== category.idCategory);
-
-//       dispatchObj={
-//         type:"REMOVE_FAV",
-//         payload:favWithoutCat
-//       }
-//     }
-
-//     console.log("dispatchObj:",dispatchObj)
-//   return dispatch(dispatchObj);
-// }
   return (
     <BrowserRouter>
     <div className="App">
       <div className="content">
       <Header/>
       <Switch>
-      <Route  
-        exact 
-        path="/" 
-        component={Home}/>
-      <Route 
-        exact
-        path="/search" 
-        component={RecipesList}
-            />
-      <Route 
-        exact
-        path="/selection/favourites" 
-        component={Favourites}
-            />
+        <Route  
+          exact 
+          strict
+          path="/" 
+          component={Home}/>
+        <Route 
+          exact
+          strict
+          path="/search/:query" 
+          component={RecipesList}
+              />
+        <Route 
+          exact
+          strict
+          path="/favourites" 
+          component={Favourites}
+              />
 
-      <Route  
-        exact 
-        path="/selection/:category" 
-        component={Category}/>
-      
-      <Route 
-        exact
-        path="/selection/:category/:recipe_id/" 
-        component={Recipe}
-            />
-
-      </Switch>
+        <Route  
+          exact
+          strict 
+          path="/:category" 
+          component={Category}/>
+        
+        <Route 
+          exact
+          
+          path="/:category/:recipe_id/" 
+          component={Recipe}
+              />
+        </Switch>
       </div>
- 
-
-
       <Footer/>
     </div>
     </BrowserRouter>

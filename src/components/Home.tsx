@@ -19,11 +19,12 @@ export default function Home(props:any): JSX.Element {
          return(
          <li className="item" key={item.idCategory}>
            <div>
-           <Link to={`/selection/${item.strCategory}`}>
+          
              <img src={item.strCategoryThumb} alt={item.strCategory}/>
-             </Link>
+            
              <h2>{item.strCategory}</h2>
-           
+             <Link to={`/${item.strCategory}`}  className="btn-primary recipes-link">See recipes </Link>
+            
            </div>
            {/* <button 
            type="button" 

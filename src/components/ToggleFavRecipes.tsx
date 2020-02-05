@@ -14,7 +14,10 @@ export default function ToggleFavRecipes(props:any):JSX.Element {
         type="button"
         onClick={()=> toggleFavAction(props.recipe)}>
               {state.favourites.find((fav: IRecipeDetails  )=>
-                fav.idMeal === props.recipe.idMeal) ? <FaHeart className="btn-fav active"/>:<FaHeart className="btn-fav"/> }
+                fav.idMeal === props.recipe.idMeal) ? <FaHeart 
+                className="btn-fav active"
+                title="unlike"
+                />:<FaHeart className="btn-fav" title="like"/> }
       </button>
     )
 }

@@ -30,9 +30,13 @@ export default function Nav(props:any): JSX.Element {
                 <NavLink to="/" onClick={()=>props.toggleNavHandler()}><FaList className="logo"/>categories</NavLink>    
                 </li>
                 <li>
-                 <NavLink to="/selection/favourites" onClick={()=>props.toggleNavHandler()}> <FaBookmark className="logo"/>
-                 {favourites ? `${favourites.length} recipes saved` : 'create bookmark'}
-                  </NavLink>
+                    {
+                       favourites.length > 0 && (
+                        <NavLink to="/favourites" onClick={()=>props.toggleNavHandler()}> <FaBookmark className="logo"/> {favourites.length} recipes saved
+                          </NavLink>
+                       )  
+                    }
+                
                 </li>
             </ul>
         </div>

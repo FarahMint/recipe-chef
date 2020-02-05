@@ -4,14 +4,13 @@ import ToggleFavRecipes from "./ToggleFavRecipes";
 
 export default function Recipe(props:any):JSX.Element {
 
-    const {state, getOneRecipe}=useContext(Store)
+    const {state, getOneRecipe }=useContext(Store)
     const id = props.match.params.recipe_id;
-
-
+     
 
 
     useEffect(()=>{
-       getOneRecipe(id);
+      getOneRecipe(id);
        },[]);
 
 //   const ingredients= this.addMealToDOM(state);
