@@ -9,29 +9,27 @@ import {FaSearch } from 'react-icons/fa';
 /**STORE */
 import {Store } from '../../store/reducer';
 
- 
-function Search(props:any): JSX.Element {
+/**
+ * disable btn for search
+ * https://stackoverflow.com/questions/52868369/enable-or-disable-a-button-based-on-a-textfield-value-in-react-js
+ */ 
 
-      /**get context from store */
+
+function Search(props:any): JSX.Element {
     
       const { searchRecipes }=useContext(Store)
-      /**state hook for the form */
       const [input, setInput] = useState("");
+     
+      // check input to enable btn
+      const disabled = !input.length;
       
-      /** when user submit the form*/
+
+
       const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();        
+        e.preventDefault(); 
+        
         searchRecipes(input);
-       
-         props.history.push(`/search/${input}`);
-
-        // NEED TO WORK ON THAT LOGIC
-        // if (!props.error.msg && !props.error.show){
-        //   props.scrollToResult();
-        // }
-        //  if there is no error page scroll
-        /**clear input field after user search */
-
+        props.history.push(`/search/${input}`);
         setInput("");
          };
 
@@ -55,7 +53,11 @@ function Search(props:any): JSX.Element {
         
 
           <button 
-          className="search__btn" type="submit">
+          className="search__btn" 
+          type="submit" 
+         disabled={disabled}
+          >
+
            <FaSearch  className="icon-search"/>
           </button>
 

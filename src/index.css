@@ -40,6 +40,9 @@ form, input, button{
 li{
   list-style:none;
 }
+h2{
+  font-weight: 200;
+}
 
 .content{
   min-height: calc(100vh - 35px);
@@ -47,9 +50,9 @@ li{
 }
 
 .container{
-  width:90%;
+  width:95%;
   margin:0 auto;
-  padding:10px;
+  padding:0.15rem;
   overflow:none;
 }
 
@@ -58,10 +61,11 @@ li{
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
-  background: var(  --mainWhite);
+  color:  var(  --mainWhite);;
+  /* background: var(  --mainWhite); */
+ 
   padding: 0.4rem 0.9rem;
-  border: 3px solid var(  --mainWhite);
+  border: 3px solid   #087f7b;
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
@@ -129,6 +133,7 @@ align-self: center;
 
 .icon-search{
   font-size: 1.5rem;
+  cursor:pointer;
 }
 
 .subheader{
@@ -136,7 +141,7 @@ align-self: center;
   color:#fff;
   box-shadow: 3px 3px 10x #888;
   margin: 0 auto 1rem auto;
-  width:90%;
+  width:80%;
   font-size:14px;
   padding:10px;
   display:flex;
@@ -305,7 +310,7 @@ cursor: pointer;
 
 .side-drawer li a{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem 0;
 
   color: var(--mainWhite);
@@ -363,7 +368,8 @@ cursor: pointer;
 
 
 .grid-container .item:hover {
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0, 0.8); */
+  background: #f93f23;
 }
 .grid-container .item:hover img{
   opacity: 0.3;
@@ -506,8 +512,22 @@ position:sticky;
 }
  
 @media(min-width:768px){
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    overflow: none;
+}
+
+  .app-header .container{
+     flex-direction:row;
+     justify-content:space-between;
+  
+     /* padding:15px 10px; */
+    }
   .grid-container{
-    grid-template-columns:repeat(auto-fit, minmax(255px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
   }
   
    .grid-container item .img{
