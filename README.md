@@ -1,6 +1,7 @@
 # Recipe Chef
+A recipe recommendations web app built with React.js that fetches data from TheMealDB API with search functionality, and allows users to select and save recipes they are interested in, leveraging the local storage API.
 
-Web app created with:
+## 🧐 Web stack:
 - React.js
 - React Context API for the state management
 - React-router
@@ -8,16 +9,16 @@ Web app created with:
 - Data from themealdb API  
 - LocalStorage
 
-## 🧐 What user can do?
+## 🧐 What can user do?
 A user of 'Recipe Chef' can do the following:
-- [x] Browse all the available recipes 
-- [x] Browse all the recipes category
-- [x] View all recipes from a selected category
-- [x] View a recipe details
-- [x] Lookup a recipe using text-based search
-- [x] Use Recipe Chef on their mobile device
-- [x] Bookmark a selected recipe 
-- [x] Remove a selected recipe from preious bookmark
+- [x] Browse all the available recipes.
+- [x] Browse all the recipes category.
+- [x] View all recipes from a selected category.
+- [x] View the recipe details.
+- [x] Lookup a recipe using text-based search.
+- [x] Use Recipe Chef on their mobile device.
+- [x] Bookmark a selected recipe.
+- [x] Remove a selected recipe from previous bookmark.
 
 
 ## 🧐 Work in progress
