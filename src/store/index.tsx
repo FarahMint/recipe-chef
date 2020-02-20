@@ -1,6 +1,7 @@
 
-import React, { useReducer, useEffect} from 'react';
+import React, { useReducer, useEffect, useState} from 'react';
 
+import { useHistory } from 'react-router'
 
 
 import {
@@ -8,8 +9,10 @@ import {
      FETCH_CATEGORY_SELECTED, 
  GET_RECIPE,
   GET_QUERY, 
+  QUERY_INPUT,
      ADD_FAV, 
-    REMOVE_FAV
+    REMOVE_FAV,
+    GET_NOTIFICATION
     } from "./action"; 
     
     
@@ -19,7 +22,8 @@ import {
     
     export function StoreProvider(props:any):JSX.Element{
 
-
+  // *********** ROUTER ***********
+  const history = useHistory();
 
       const localState = JSON.parse(localStorage.getItem('state') || '{}');
     
@@ -29,10 +33,16 @@ import {
           
       const [state, dispatch]= useReducer(recipesReducer,localState ? initialState  : localState );
 
-      
-        const fetchDataAction = async ()=>{
+
+
+  const [sideDrawer , setSideDrawer]= useState();
+
+  // *********** NAVBAR ***********
+   const toggleNavHandler = () => setSideDrawer(!sideDrawer );
+
 
       
+        const fetchDataAction = async ()=>{
           try{
             const URL = `https://www.themealdb.com/api/json/v1/1/categories.php`;
             const data = await fetch(URL);
@@ -87,7 +97,7 @@ import {
  const searchRecipes= async ( search:any)=>{
 
   dispatch({
-    type:   "QUERY_INPUT" ,
+    type: QUERY_INPUT ,
     payload:search
 })
   
@@ -96,7 +106,19 @@ import {
     const URL =  `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`;
     const data = await fetch(URL);
     const dataJSON = await data.json();
- 
+
+    if( dataJSON.meals === null){
+        let msg = { 
+          status:"danger", 
+          text: `sorry no recipe found related to ${search}`,
+          show: true
+        }
+       
+    
+        handleAlert(msg);
+     return history.push("/");
+
+    }
     dispatch({
         type:   GET_QUERY ,
         payload:dataJSON
@@ -108,7 +130,7 @@ import {
   }
 };
 
-         
+          
 
         const toggleFavAction= (recipe :IRecipeDetails |any ) :IAction=> {
          
@@ -148,6 +170,14 @@ import {
       }, [state]);
 
 
+
+       // NOTIF HELP FUNCTION
+  const handleAlert = (msg:any)=>{ 
+    dispatch({type:GET_NOTIFICATION, payload:msg  })
+    setTimeout(()=> dispatch({type:GET_NOTIFICATION, payload:{}}), 3000)
+  
+  };
+
         return(
         <Store.Provider 
             value ={{ 
@@ -156,7 +186,9 @@ import {
                 fetchCategorySelected,
                 getOneRecipe,
                 toggleFavAction,
-                searchRecipes         
+                searchRecipes  ,
+                sideDrawer ,
+                toggleNavHandler        
                 }}>
             {props.children}
         </Store.Provider>)

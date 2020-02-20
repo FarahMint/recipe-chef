@@ -1,7 +1,5 @@
-import React  from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-
-import './App.css';
+import React , {useContext} from 'react';
+import { Route, Switch } from "react-router-dom";
  
   import Header from "./components/Header";
   import Footer from "./components/Footer";
@@ -10,15 +8,35 @@ import './App.css';
   import RecipesList from "./components/RecipesList";
   import Recipe from "./components/Recipe";
   import Favourites from "./components/Favourites";
+  import Notifications from "./components/Header/Notifications"; 
   import Error from "./components/Error";
 
-const App = () => {
+
+  import {Store } from "./store/reducer";
+  
+  
+
+ 
+  export default function App(props:any):JSX.Element {
+
+
+  const {state }=useContext(Store);
+  const {notification :{text, status, show}} = state;
+
+  let notificationMsg = (text!=="" && show === true) && <Notifications 
+  status = {status}
+  text= {text}
+  />;
+ 
 
   return (
-    <BrowserRouter>
+  
     <div className="App">
       <div className="content">
       <Header/>
+ 
+      {notificationMsg}
+
       <Switch>
         <Route  
           path="/" 
@@ -51,8 +69,5 @@ const App = () => {
       </div>
       <Footer/>
     </div>
-    </BrowserRouter>
   );
 }
-
-export default App;

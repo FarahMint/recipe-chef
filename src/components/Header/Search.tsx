@@ -47,7 +47,7 @@ function Search(props:any): JSX.Element {
             type="text" 
             value={input}
            onChange={(e)=>   setInput(e.target.value)}
-            placeholder="look for a recipe..."
+            placeholder="what would you like to cook?"
             className="search"
           />
         

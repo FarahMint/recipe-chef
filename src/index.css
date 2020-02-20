@@ -2,7 +2,8 @@
   --primary-color:  #f93f23;
   --lightOrange: rgba(249, 63, 35,.5);
   --mainBlack: #333;
-  --mainWhite: #fefefe;
+  /* --mainWhite: #fefefe; */
+  --mainWhite: #f2f3ee;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -22,9 +23,10 @@
 /*GLOBAL*/
 
 body{
-  font-family:"Roboto", sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display:flex;
   flex-direction:column;
+  background-color: var(--mainWhite);
 }
 
 a{
@@ -33,6 +35,11 @@ a{
 }
 button{
   border:none;
+}
+
+button:disabled {
+background-color: #fff;
+
 }
 form, input, button{
   outline: none;
@@ -52,9 +59,9 @@ h2{
 .container{
   width:95%;
   margin:0 auto;
-  padding:0.15rem;
   overflow:none;
 }
+
 
 
 .btn-primary {
@@ -65,7 +72,7 @@ h2{
   /* background: var(  --mainWhite); */
  
   padding: 0.4rem 0.9rem;
-  border: 3px solid   #087f7b;
+  border: 3px solid var(--mainBlack);
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
@@ -76,18 +83,17 @@ h2{
 }
 
 /* END GLOBAL */
-
 .app-header{
  color: var(--primary-color);
+ background: rgba(255, 255, 255, .85);
   box-shadow: 3px 3px 10x #888;
-  background-color:#fff;
+  position:sticky;
  }
 
 .app-header .container{
  display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:15px 10px;
  }
 
  .app-header .container div{
@@ -96,9 +102,20 @@ h2{
   align-items: center;
  }
 
-.app-header .logo{
-color:var(--primary-color);
-   
+ .app-header .container > div:first-of-type {
+  margin: 0;
+  padding: 1rem;
+}
+
+.app-header .logo,
+.side-drawer div.logo{
+color:var(--primary-color);  
+ }
+
+.side-drawer div.logo{
+font-size: 2rem;
+text-transform: uppercase; 
+text-align: center;
  }
  /* NAV */
 
@@ -113,19 +130,24 @@ align-self: center;
 
 .app-header .form-container  {
   margin-top: 1rem;
+  width: 100%;
 }
 
 .app-header .form-container form {
   display:flex;
   width:100%;
   padding: 1rem;
-  border: 1px #ccc solid;
+  border: 0;
+  font-size: 1.8rem;
+    overflow: hidden;
 }
+
+
 .app-header .form-container form input[type="text"]{
   padding:7px;
   width:100%;
   border:0;
-  font-size:1.5rem;
+  font-size:1.15rem;
 }
 .app-header .form-container form > input[type="text"]:focus {
  border-bottom: 1px solid var(--primary-color);
@@ -137,26 +159,28 @@ align-self: center;
 }
 
 .subheader{
-  background-color: rgba(0,0,0,.8);
-  color:#fff;
-  box-shadow: 3px 3px 10x #888;
+ width: 80%;
   margin: 0 auto 1rem auto;
-  width:80%;
-  font-size:14px;
-  padding:10px;
-  display:flex;
-    align-items:center ;
-  justify-content:space-between;;
-  
+  font-size: 1rem;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
 }
+
+
 .subheader a{
 color:#fff;  
 }
+
 
 .subheader p{
 text-transform:uppercase; 
 text-align:center!important;
 align-self: center; 
+font-size: 1rem;
+letter-spacing: 0;
+
 }
 .subheader svg.btn-fav{
   color: #e82e95;
@@ -166,7 +190,7 @@ align-self: center;
  * ==================== BACKDROP ====================
 */
 
-.backDrop{
+/* .backDrop{
   position: fixed;
   top:0;
   left:0;
@@ -174,7 +198,7 @@ align-self: center;
   height:100%;
   background: rgba(0,0,0,.3);
   z-index:100;    
-}
+} */
 /*
  * ==================== NAVBAR ====================
 */
@@ -267,17 +291,21 @@ align-self: center;
  * ==================== DRAWER ====================
 */
 .side-drawer{
-  background: #3b3b3b;
-  box-shadow: 1px 0px  7px rgba(0,0,0,0.5);
   height: 100%;
   position: fixed;
-  top:0;
+  top:0px;
   left:0;
-  width: 70%;
-  max-width: 200px;
+  bottom: 0;
+  width: 80%;
+  max-width: 300px;
   z-index: 200;
   transform: translateX(-100%);
   transition: transform .3s ease-out;
+
+  background: rgba(25,25,25,.97);
+  letter-spacing: .4px;
+  overflow-y: auto;
+  padding: 10px 0;
 }
 
 
@@ -293,6 +321,8 @@ align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 
@@ -319,7 +349,8 @@ cursor: pointer;
 .side-drawer li a .logo{
   color: var(--lightOrange);
     text-decoration: none;
-    font-size:1.2rem;
+    font-size:2rem;
+    
 }
 
 /*
@@ -406,6 +437,11 @@ section .container{
    padding:15px 10px;
   }
 
+section .container.slide{
+ margin-left: 250px;
+ transition: all .5s ease-in-out;
+  }
+
   section .container.recipe-container div:first-of-type{
   display:flex;
   flex-direction: column;
@@ -481,6 +517,54 @@ position:sticky;
 /*
  * ====================  END FOOTER ====================
 */
+/*
+ * ====================  NOTIFICATION ====================
+*/
+
+.alert{
+  padding: .75rem 1.25rem;
+  text-transform: capitalize;
+}
+
+.alert-danger{
+  color: var(--danger-color);
+}
+.alert-success{
+  color: var(--success-color);
+
+}
+.alert-info{
+  color: var(--info-color);
+
+}
+ /* The Modal (background) */
+.modal{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 100px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 3% auto;
+  text-align: center;
+  max-width: 400px;
+
+  font-size: 14px;
+  line-height: 20px;
+  padding: 12px 24px;
+
+}
+/*
+ * ====================  END NOTIFICATION ====================
+*/
 
 /*
  * ==================== MEDIA QUERIES ====================
@@ -514,18 +598,42 @@ position:sticky;
 @media(min-width:768px){
 
   .container {
-    width: 80%;
-    margin: 0 auto;
     padding: 10px;
     overflow: none;
+    padding:0.15rem;
 }
 
   .app-header .container{
      flex-direction:row;
-     justify-content:space-between;
-  
-     /* padding:15px 10px; */
+     justify-content:flex-start;
+     padding:15px 10px;
+
     }
+
+    .app-header .container > div:first-of-type{
+     border-right: 1px solid #ccc;
+     }
+
+     .app-header .form-container {
+      margin-top: 1rem;
+      width: calc(100% - 300px);
+  }
+
+  .app-header .form-container form input[type="text"] {
+    padding: 7px;
+    width: 100%;
+    border: 0;
+    font-size: 1.5rem;
+}
+
+ 
+  .subheader p{
+  font-size: 2rem;
+  letter-spacing: 5px;
+  
+  }
+
+
   .grid-container{
     grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
   }
@@ -542,3 +650,8 @@ position:sticky;
 }
 }
  
+@media(max-width:320px){
+  .app-header .form-container form input[type="text"] {
+    font-size: 1rem;
+  }
+}

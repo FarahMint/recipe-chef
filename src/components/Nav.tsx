@@ -5,9 +5,11 @@ import {NavLink} from 'react-router-dom';
 
 
 /**ICON */
-import {  FaBookmark, FaList} from "react-icons/fa";
+import {  FaHeart, FaList} from "react-icons/fa";
 /**STORE */
 import {Store } from '../store/reducer';
+/**ICON */
+import {FaUtensils} from "react-icons/fa";
 
 
 
@@ -25,6 +27,9 @@ export default function Nav(props:any): JSX.Element {
     <>
      <nav className={drawerClasses}>
         <div className="container">
+            <div className="logo">
+                <FaUtensils/>r-c
+            </div>
             <ul className="toolbar_navigation-items">
                 <li>
                 <NavLink to="/" onClick={()=>props.toggleNavHandler()}><FaList className="logo"/>categories</NavLink>    
@@ -32,7 +37,7 @@ export default function Nav(props:any): JSX.Element {
                 <li>
                     {
                        favourites.length > 0 && (
-                        <NavLink to="/favourites" onClick={()=>props.toggleNavHandler()}> <FaBookmark className="logo"/> {favourites.length} recipes saved
+                        <NavLink to="/favourites" onClick={()=>props.toggleNavHandler()}> <FaHeart className="logo"/> {favourites.length} recipes saved
                           </NavLink>
                        )  
                     }

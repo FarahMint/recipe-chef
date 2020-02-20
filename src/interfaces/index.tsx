@@ -5,11 +5,17 @@ export interface IState {
     recipeList:Array<any>,
     favourites: Array<any>,
     query:string
+   notification: INotif
 }
 
 export interface IAction {
     type:string,
     payload:{} | any,
+}
+export interface INotif {
+  status:string, 
+  text: string,
+  show?:boolean,
 }
 
 export interface ICategory{

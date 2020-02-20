@@ -3,11 +3,10 @@ import React ,  { useContext}from 'react';
  
 
 import {Store } from "../../store/reducer";
-// ROUTER
-import {Link} from "react-router-dom";
+ 
 
 /**ICON */
-import { FaHeart,FaChevronLeft} from "react-icons/fa";
+import { FaChevronLeft} from "react-icons/fa";
  
 import {
   useLocation, useHistory
@@ -58,9 +57,7 @@ export default function Subheader(props:any): JSX.Element {
             <div> 
              <p>{title }</p>
             </div>
-            <div> {props.favourites && props.favourites.length >0 &&
-    <Link to="/favourites"> {props.favourites.length} <FaHeart className="btn-fav"/></Link>}
-          </div>
+ 
         </div>
       </>
     )

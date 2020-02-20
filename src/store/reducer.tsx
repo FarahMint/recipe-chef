@@ -5,7 +5,9 @@ import {
     GET_RECIPE,
     GET_QUERY, 
     ADD_FAV, 
-    REMOVE_FAV
+    QUERY_INPUT,
+    REMOVE_FAV,
+    GET_NOTIFICATION
     } from "./action"; 
     
     
@@ -21,7 +23,8 @@ import {
         recipe:{},
         recipeList:[],
         favourites:[],
-        query:""
+        query:"",
+        notification:{show:false, status:"", text:""},
     };
     
     
@@ -64,11 +67,16 @@ import {
                     ...state,
                     favourites: action.payload
                 }
-            case "QUERY_INPUT":
+            case QUERY_INPUT:
                  
                 return {
                     ...state,
                     query: action.payload
+                }
+                case  GET_NOTIFICATION:       
+                return {
+                    ...state,
+                    notification: action.payload
                 }
                 
     

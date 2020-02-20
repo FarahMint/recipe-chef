@@ -1,6 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import {Store } from "../store/reducer";
-import { Link } from "react-router-dom";
+
+/**COMPONENT */
+import BtnDetails from "./BtnDetails";
 
 import { IRecipe} from "../interfaces";
 
@@ -22,26 +24,24 @@ useEffect(()=>{
     return (
     <section className="container category-container">
        <div className="grid-container">
-            {meals&& meals.map((item: IRecipe) => {
-              return (
-                <div className="item"
-                  key={item.idMeal}
-                >
-                    <div>
-                        <img
-                          src={item.strMealThumb}
-                          alt={item.strMeal}/>
-                          <h3>{item.strMeal}</h3>
-
-                          <Link to={`/${category}/${item.idMeal}`} className="btn-primary recipes-link">details
-                      </Link>
+          {meals&& meals.map((item: IRecipe) => {
+            return (
+              <div className="item"
+                  key={item.idMeal}>
+                <div>
+                  <img
+                    src={item.strMealThumb}
+                    alt={item.strMeal}/>
+                  <h3>{item.strMeal}</h3>
                 
-                 
-                  </div>
+                 <BtnDetails
+                 category={category}
+                 item={item}/>
                 </div>
-              );
-            })}
-            </div>
-        </section>
+              </div>
+          );
+        })}
+      </div>
+    </section>
     )
 }

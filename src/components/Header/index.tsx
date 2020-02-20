@@ -1,4 +1,6 @@
-import React , {useContext, useState} from 'react';
+import React , {useContext
+  // , useState
+} from 'react';
 // STORE
 import {Store } from "../../store/reducer";
 
@@ -11,12 +13,12 @@ import Backdrop from "./Backdrop";
  
 
 export default function Index(): JSX.Element {
-  const { state }=useContext(Store);
+  const { state, sideDrawer , toggleNavHandler }=useContext(Store);
 
-  const [sideDrawer , setSideDrawer]= useState();
+  // const [sideDrawer , setSideDrawer]= useState();
 
  // *********** NAVBAR ***********
-  const toggleNavHandler = () => setSideDrawer(!sideDrawer );
+  // const toggleNavHandler = () => setSideDrawer(!sideDrawer );
 
   // CONTROL BACKFROP DISPLAY COMPONENT
   let backdrop;
@@ -24,7 +26,7 @@ export default function Index(): JSX.Element {
   if( sideDrawer){
     backdrop =  <Backdrop click={toggleNavHandler}/>;
   }
- 
+
     return (
        <>
        <Header

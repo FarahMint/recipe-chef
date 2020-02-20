@@ -26,12 +26,6 @@ export default function Home(props:any): JSX.Element {
              <Link to={`/${item.strCategory}`}  className="btn-primary recipes-link">See recipes </Link>
             
            </div>
-           {/* <button 
-           type="button" 
-           onClick={()=> toggleFavAction(item)}>
-            {state.favourites.find((fav: ICategory  )=>
-               fav.idCategory === item.idCategory) ? `unfav`:`fav` }
-           </button> */}
          </li>
          )
        })
