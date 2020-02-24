@@ -677,7 +677,8 @@ position:sticky;
 /* add landpage working on... */
 
 .landpage-container{
-  padding: 5rem 0;
+  padding-bottom: 5rem;
+  padding-top:0;
 }
 
 .main-content{
