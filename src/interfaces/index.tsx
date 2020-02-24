@@ -1,4 +1,8 @@
 export interface IState {
+  numOfCategory : number,
+ 
+  numOfRecipesByCat: any,
+
     categories: Array<ICategory>
     selectedCat:Array<IRecipe>
     recipe: {},

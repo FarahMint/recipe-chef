@@ -29,7 +29,7 @@ export default function Subheader(props:any): JSX.Element {
  const DisplayText = (str:string, selection ="/", text="")=>{
    let slashPosition = str.lastIndexOf(selection);
 
-    if(str === selection ) return text = "categories";
+    if(str === selection ) return text = "";
   
     str.includes(selection) && ( text = str.slice(slashPosition).replace(/^\//, ''))
 
@@ -49,7 +49,7 @@ export default function Subheader(props:any): JSX.Element {
        <>
         <div className="subheader">
           {
-            title !=="categories" && ( <FaChevronLeft 
+            title !=="" && ( <FaChevronLeft 
               className="fa chevron-right" onClick={() => history.goBack()}
               /> )
           }

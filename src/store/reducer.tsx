@@ -1,6 +1,7 @@
 
 import {
     FETCH_CATEGORIES,
+    FETCH_RECIPES_MAP,
     FETCH_CATEGORY_SELECTED, 
     GET_RECIPE,
     GET_QUERY, 
@@ -18,6 +19,9 @@ import {
     
     
     export const initialState : IState ={
+        numOfCategory : 0,
+    
+        numOfRecipesByCat: {},
         categories:[],
         selectedCat:[],
         recipe:{},
@@ -35,9 +39,19 @@ import {
      function recipesReducer(state: IState , action:IAction):IState {
          switch(action.type){
             case FETCH_CATEGORIES:
+                
+           const {categories, numOfRecipesByCat}=action.payload;
                 return {
                     ...state,
-                     categories: action.payload
+                     categories,
+                     numOfCategory: categories.length,
+                     numOfRecipesByCat: numOfRecipesByCat
+                }
+            case FETCH_RECIPES_MAP:
+
+                return {
+                    ...state,
+                    numOfRecipesByCat: action.payload
                 }
             case  FETCH_CATEGORY_SELECTED:
                 return {

@@ -14,13 +14,15 @@ export default function Category(props:any):JSX.Element {
  const {state,  fetchCategorySelected }=useContext(Store)
  const category = props.match.params.category;
 
+
+
 useEffect(()=>{
     fetchCategorySelected(category);
    // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    const { meals } = state.selectedCat;
-
+ 
     return (
     <section className="container category-container">
        <div className="grid-container">
@@ -33,7 +35,7 @@ useEffect(()=>{
                     src={item.strMealThumb}
                     alt={item.strMeal}/>
                   <h3>{item.strMeal}</h3>
-                
+                 
                  <BtnDetails
                  category={category}
                  item={item}/>

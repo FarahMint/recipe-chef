@@ -21,6 +21,13 @@ A user of 'Recipe Chef' can do the following:
 - [x] Remove a selected recipe from previous bookmark.
 
 
+## Notes work done:
+ 
+- display the number of recipes per categories
+- display total number of all recipes available from the API
+- user get notified when add, remove a recipe from bookmark
+- change the UI  when get on mobile view (vw > 678px);
+
 ## 🧐 Work in progress
 - 404 page 
 - sass for style
@@ -52,4 +59,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
  
   9. **`DISPLAY RESULT USER SEARCH NOT FOUND`**
    <img width="200" src="https://user-images.githubusercontent.com/18241226/74966708-7b69df00-540f-11ea-8c2a-990058ab89a6.png" alt="tablet-recipe-chef" title="tablet-recipe-chef"/>
+
+  10. **`DISPLAY MOBILE`**
+   <img width="200" src="https://user-images.githubusercontent.com/18241226/75194419-fbfe4780-574f-11ea-8406-7e39bb5dfe4b.png" alt="mobile-recipe-chef" title="mobile-recipe-chef"/>
+   <img width="200" src="https://user-images.githubusercontent.com/18241226/75194420-fe60a180-574f-11ea-943b-85a15bbf4d1f.png" alt="mobile-recipe-chef" title="mobile-recipe-chef"/>
+   <img width="200" src="https://user-images.githubusercontent.com/18241226/75194425-ff91ce80-574f-11ea-9eeb-849f300838e1.png" alt="mobile-recipe-chef" title="mobile-recipe-chef"/>
 

@@ -5,7 +5,6 @@ import React , {useContext
 import {Store } from "../../store/reducer";
 
 // COMPONENTS
-import SubHeader from "./SubHeader";
 import Header from "./Header";
  
 import Drawer from "./Drawer"
@@ -32,10 +31,6 @@ export default function Index(): JSX.Element {
        <Header
         toggleNavHandler ={toggleNavHandler }
         sideDrawer={sideDrawer}/>
-
-        <SubHeader
-        favourites={state.favourites}
-        />
 
         <Drawer 
         favourites={state.favourites}
