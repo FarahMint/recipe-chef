@@ -34,7 +34,8 @@ import {Store } from "../store/reducer";
             </div>
             <div className="area-3">
             <FaHeart aria-label="pick your favorites"/>
-            <Link to="/favourites">{state.favourites.length} 
+            <Link to="/favourites">
+                {state.favourites&&state.favourites.length > 0 && state.favourites.length} 
                 <h2>bookmark</h2>
             </Link>
             </div>
