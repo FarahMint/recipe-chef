@@ -13,16 +13,14 @@ import { IRecipeDetails} from "../interfaces"
 export default function RecipesList(props:any):JSX.Element {  
  const {state , sideDrawer}=useContext(Store);
  const {meals} = state.recipeList;
+ 
 
     return (
         <section 
-        className={!sideDrawer ? `container` :`container slide`}
-        
-        >
-          {/* {!meals ? <p className="info-no-result">sorry no result were found please try another ingredient</p>
-          : */}
-          <>
+        className={!sideDrawer ? `container` :`container slide`}>
+   
           <div className="grid-container">
+          
                {meals && meals.map((item:  IRecipeDetails) => {
                  return (
                    <div className="item"
@@ -41,8 +39,7 @@ export default function RecipesList(props:any):JSX.Element {
                  );
                })}
                </div>
-               </>
-          {/* } */}
+              
       
          </section>
     )

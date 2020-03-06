@@ -20,7 +20,7 @@ import {Store } from "../store/reducer";
             <FaUtensilSpoon
                  aria-label="pick from variety of recipes"/>
 
-            <Link to="/">     
+            <Link to="/search">     
             <h2>
               {allRecipes} recipes</h2>
             </Link>
