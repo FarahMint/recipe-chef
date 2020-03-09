@@ -1,8 +1,8 @@
 import React, {useContext, useEffect} from 'react';
-import {Store } from "../store/reducer";
+import {Store } from "../../store/reducer";
 import ToggleFavRecipes from "./ToggleFavRecipes";
 
-export default function Recipe(props:any):JSX.Element {
+export default function SingleRecipe(props:any):JSX.Element {
 
     const {state, getOneRecipe }=useContext(Store)
     const id = props.match.params.recipe_id;

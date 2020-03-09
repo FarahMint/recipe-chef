@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
-import {Store } from "../store/reducer";
+import {Store } from "../../store/reducer";
 /**ICON */
 import {  FaHeart} from "react-icons/fa";
 
- import {IRecipeDetails} from "../interfaces";
+ import {IRecipeDetails} from "../../interfaces";
 
 export default function ToggleFavRecipes(props:any):JSX.Element {
 

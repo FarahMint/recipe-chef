@@ -1,5 +1,6 @@
 
 import {
+    FETCH_RANDOM_MEAL,
     FETCH_CATEGORIES,
     FETCH_RECIPES_MAP,
     FETCH_CATEGORY_SELECTED, 
@@ -38,6 +39,12 @@ import {
     
      function recipesReducer(state: IState , action:IAction):IState {
          switch(action.type){
+            case FETCH_RANDOM_MEAL:
+                
+                return {
+                    ...state,
+                  recipe: action.payload
+                }
             case FETCH_CATEGORIES:
                 
            const {categories, numOfRecipesByCat}=action.payload;

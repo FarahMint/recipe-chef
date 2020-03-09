@@ -1,14 +1,14 @@
 import React, {useContext, useEffect} from 'react';
-import {Store } from "../store/reducer";
+import {Store } from "../../store/reducer";
 
 /**COMPONENT */
-import BtnDetails from "./BtnDetails";
+import BtnDetails from "../BtnDetails";
 
-import { IRecipe} from "../interfaces";
+import { IRecipe} from "../../interfaces";
 
 
 
-export default function Category(props:any):JSX.Element {  
+export default function SingleCategory(props:any):JSX.Element {  
 
 
  const {state,  fetchCategorySelected }=useContext(Store)

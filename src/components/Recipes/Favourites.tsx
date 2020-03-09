@@ -1,16 +1,20 @@
 import React, {useContext} from 'react';
-import {Store } from "../store/reducer";
+import {Store } from "../../store/reducer";
 import { Link } from "react-router-dom";
 
-import { IRecipeDetails } from '../interfaces';
+import { IRecipeDetails } from '../../interfaces';
 import ToggleFavRecipes from "./ToggleFavRecipes";
 
 export default function Favourites():JSX.Element  {
     const {state }=useContext(Store);
 
     return (
-        <section className="container">
-             { (state.favourites && state.favourites.length > 0 )? null :  <h1>Select your favorite recipes</h1>}
+        <section className="container recipe-box-container">
+             { (state.favourites && state.favourites.length > 0 )? null : 
+             <> 
+             <h2>Create your first recipe box</h2>
+             <span>easy &amp; free, start your search now </span>
+             </>}
         <div className="grid-container">
 
             {state.favourites.map((item: IRecipeDetails) =>(   

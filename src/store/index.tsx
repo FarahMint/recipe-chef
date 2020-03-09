@@ -1,11 +1,11 @@
 
-import React, { useReducer, useEffect, useState} from 'react';
+import React, { useReducer, useEffect} from 'react';
 
 import { useHistory } from 'react-router'
 
 
 import { FETCH_CATEGORIES,
-  //  FETCH_RECIPES_MAP, 
+  FETCH_RANDOM_MEAL,
    FETCH_CATEGORY_SELECTED, GET_RECIPE,GET_QUERY, QUERY_INPUT, ADD_FAV, REMOVE_FAV, GET_NOTIFICATION } from "./action"; 
     
 import {initialState , Store, recipesReducer } from "./reducer"
@@ -26,35 +26,54 @@ export function StoreProvider(props:any):JSX.Element{
 
 
 
-  const [sideDrawer , setSideDrawer]= useState();
+  //const [sideDrawer , setSideDrawer]= useState();
 
   // *********** NAVBAR ***********
-   const toggleNavHandler = () => setSideDrawer(!sideDrawer );
+  // const toggleNavHandler = () => setSideDrawer(!sideDrawer );
 
 
       
-  const getCategoryList = async ()=>{
+  const getRandomMeal = async ()=>{
     try{
-        const URL = `https://www.themealdb.com/api/json/v1/1/categories.php`;
+        const URL = `https://www.themealdb.com/api/json/v1/1/random.php`;
         const data = await fetch(URL);
             
-        const {categories} = await data.json();
+        const response = await data.json();
 
-       const numOfRecipesByCat =await getNumOfRecipePerCat(categories); 
-      // console.log(numOfRecipesByCat)
+      // console.log(response)
     
 
     dispatch({
-              type: FETCH_CATEGORIES,
-              payload:{
-                categories,
-                numOfRecipesByCat
-              },
+              type: FETCH_RANDOM_MEAL,
+              payload:response
+            
       })          
         }catch(e){
             console.log(e)
       }
     }
+  // const getCategoryList = async ()=>{
+  //   try{
+  //       const URL = `https://www.themealdb.com/api/json/v1/1/categories.php`;
+  //       const data = await fetch(URL);
+            
+  //       const {categories} = await data.json();
+
+  //      const numOfRecipesByCat =await getNumOfRecipePerCat(categories); 
+  //     // console.log(numOfRecipesByCat)
+    
+
+  //   dispatch({
+  //             type: FETCH_CATEGORIES,
+  //             payload:{
+  //               categories,
+  //               numOfRecipesByCat
+  //             },
+  //     })          
+  //       }catch(e){
+  //           console.log(e)
+  //     }
+  //   }
 
     const getNumOfRecipePerCat = async (categories:any)=>{
 
@@ -198,11 +217,31 @@ export function StoreProvider(props:any):JSX.Element{
  
   
         useEffect(()=>{
-          state.categories.length === 0 && getCategoryList();
-       
-          
-       
-         });
+        
+         async function getCategoryList(){
+            try{
+                const URL = `https://www.themealdb.com/api/json/v1/1/categories.php`;
+                const data = await fetch(URL);
+                    
+                const {categories} = await data.json();
+        
+               const numOfRecipesByCat =await getNumOfRecipePerCat(categories); 
+              // console.log(numOfRecipesByCat)
+              state.recipe !== {} && getRandomMeal();
+        
+            dispatch({
+                      type: FETCH_CATEGORIES,
+                      payload:{
+                        categories,
+                        numOfRecipesByCat
+                      },
+              })          
+                }catch(e){
+                    console.log(e)
+              }
+            }
+            state.categories.length === 0 && getCategoryList();
+      }, [state.categories.length, state.recipe]);
 
         useEffect(() => {
           localStorage.setItem("state", JSON.stringify(state));
@@ -251,8 +290,6 @@ export function StoreProvider(props:any):JSX.Element{
                 getOneRecipe,
                 toggleFavAction,
                 searchRecipes  ,
-                sideDrawer ,
-                toggleNavHandler,
                 numOfRecipes,
                 total    
                 }}>

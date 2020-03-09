@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { INotif} from "../../interfaces";
+import { INotif} from "../interfaces";
 
 export default function Notifications({status, text}:INotif):JSX.Element { 
     return (

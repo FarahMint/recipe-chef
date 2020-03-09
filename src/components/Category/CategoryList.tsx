@@ -1,22 +1,21 @@
 import React ,  {useContext}from 'react';
 import { Link } from "react-router-dom";
 
-import LandingPage from "./LandingPage";
+ 
+import {Store } from "../../store/reducer";
 
-import {Store } from "../store/reducer";
+import {  ICategory} from "../../interfaces";
 
-import {  ICategory} from "../interfaces";
-
-export default function Home(): JSX.Element {
+export default function CategoryList(): JSX.Element {
 
     const {state, numOfRecipes }=useContext(Store);
     
     return (
-      <>
-        <LandingPage />
-          <section className="container">
-             
-            <ul className="grid-container">
+    <section className="container category-container">
+        <h2>categories</h2>
+        <p>recipes, guides and more</p>
+        
+        <ul className="grid-container">
           {
             state.categories.map((item : ICategory) =>{
               return(
@@ -25,7 +24,7 @@ export default function Home(): JSX.Element {
                 
                   <img src={item.strCategoryThumb} alt={item.strCategory}/>
                   
-                  <h2>{item.strCategory}</h2>
+                  <h3>{item.strCategory}</h3>
                     
                   <Link to={`/${item.strCategory}`}  className="btn-primary recipes-link">See  {numOfRecipes(item.strCategory)}  recipes </Link>
                   
@@ -36,6 +35,5 @@ export default function Home(): JSX.Element {
           }
           </ul>
         </section>
-      </>
     )
 }

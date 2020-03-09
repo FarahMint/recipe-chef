@@ -1,10 +1,13 @@
 import React, {useContext} from 'react';
-/**ICON */
-import {FaHeart, FaList, FaUtensilSpoon}  from "react-icons/fa";
 
+/**ICON */
+import {FaHeart, FaList, FaUtensilSpoon, FaPlus}  from "react-icons/fa";
+
+/**ROUTER */
 import {Link} from "react-router-dom";
 
-import {Store } from "../store/reducer";
+/**CONTEXT */
+import {Store } from "../../store/reducer";
 
 
     export default function Menu(): JSX.Element  {
@@ -16,27 +19,27 @@ import {Store } from "../store/reducer";
     return (
         <>
             <div className="categorie-available">
+                <FaPlus/>
             <div className="area-1">
             <FaUtensilSpoon
                  aria-label="pick from variety of recipes"/>
 
             <Link to="/search">     
-            <h2>
-              {allRecipes} recipes</h2>
+            <span>
+              {allRecipes} recipes</span>
             </Link>
             </div>
             <div className="area-2">
             <FaList aria-label="categories available"/>
             <Link to="/"> 
-                <h2>{ numOfCategory? numOfCategory: null} categories</h2>
+                <span>{ numOfCategory? numOfCategory: null} categories</span>
             </Link>
     
             </div>
             <div className="area-3">
             <FaHeart aria-label="pick your favorites"/>
             <Link to="/favourites">
-                {state.favourites&&state.favourites.length > 0 && state.favourites.length} 
-                <h2>bookmark option</h2>
+                {state.favourites&&state.favourites.length > 0 ? state.favourites.length : (<span>Save To Recipe Box</span>)} 
             </Link>
             </div>
         </div>

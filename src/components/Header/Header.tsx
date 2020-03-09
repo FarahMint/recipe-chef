@@ -1,5 +1,4 @@
 import React from 'react';
-import ToggleButton from "./ToggleButton";
 import Search from "./Search";
 
 
@@ -17,9 +16,6 @@ function Header(props:any): JSX.Element {
               <Link to="/">
               <h1 className="logo"><FaUtensils /> recipe-chef</h1> 
               </Link>
-              <ToggleButton 
-              toggleNavHandler ={props.toggleNavHandler }
-              sideDrawer={props.sideDrawer}/>
             </div> 
             <Search/>
           </div>

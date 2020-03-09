@@ -1,23 +1,23 @@
 import React, {useContext} from 'react';
-import {Store } from "../store/reducer";
+import {Store } from "../../store/reducer";
 
 /**COMPONENT */
-import BtnDetails from "./BtnDetails";
+import BtnDetails from "../BtnDetails";
 
  
-import { IRecipeDetails} from "../interfaces"
+import { IRecipeDetails} from "../../interfaces"
  
 
 /** DISPLAY RESULT FROM USER SEARCH */
 
 export default function RecipesList(props:any):JSX.Element {  
- const {state , sideDrawer}=useContext(Store);
+ const {state }=useContext(Store);
  const {meals} = state.recipeList;
  
 
     return (
         <section 
-        className={!sideDrawer ? `container` :`container slide`}>
+        className="container">
    
           <div className="grid-container">
           

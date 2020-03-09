@@ -1,18 +1,17 @@
 import React , {useContext, useState, useEffect} from 'react';
 import { Route, Switch } from "react-router-dom";
  
-  import Header from "./components/Header";
-  import SubHeader from "./components/Header/SubHeader";
-
+  import Header from "./components/Header/Header";
+  import Navbar from"./components/Navbar";
  
   import Footer from "./components/Footer";
   import Home from "./components/Home";
-  import Menu from "./components/Menu";
-  import Category from "./components/Category";
-  import RecipesList from "./components/RecipesList";
-  import Recipe from "./components/Recipe";
-  import Favourites from "./components/Favourites";
-  import Notifications from "./components/Header/Notifications"; 
+ 
+  import Category from "./components/Category/SingleCategory";
+  import RecipesList from "./components/Recipes/RecipesList";
+  import Recipe from "./components/Recipes/SingleRecipe";
+  import Favourites from "./components/Recipes/Favourites";
+  import Notifications from "./components/Notifications"; 
   import Error from "./components/Error";
 
 
@@ -59,14 +58,11 @@ import { Route, Switch } from "react-router-dom";
   return (
   
     <div className="App">
-      <div className="content">
       <Header/>
+      <Navbar/>
+      <div className="content">
  
       {notificationMsg}
-
-      <SubHeader
-        favourites={state.favourites}
-        />
 
       <Switch>
         <Route  
@@ -99,8 +95,8 @@ import { Route, Switch } from "react-router-dom";
       </Switch>
       </div>
       {
-        dimensions && dimensions.width > 678 ?  
-        <Footer/> : <Menu/> 
+        dimensions && dimensions.width > 678 && 
+        <Footer/>  
       }
      
     </div>
