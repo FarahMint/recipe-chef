@@ -8,7 +8,7 @@ import { FaChevronRight, FaHeart, FaList, FaHome} from "react-icons/fa";
 import {Store } from '../../store/reducer';
 
 export default function Navbar(): JSX.Element  {
-    const { state }=useContext(Store);
+    const { state , onButtonClick }=useContext(Store);
     const {favourites}= state;
 
   return (
@@ -21,14 +21,19 @@ export default function Navbar(): JSX.Element  {
         </div>
 
         <li className="nav-item">
-          <NavLink to="/" className="nav-link home">
+          <NavLink 
+          to="/" 
+          className="nav-link home"
+           >
           <FaHome/>
             <span className="link-text">home</span>
           </NavLink>
         </li>
 
         <li className="nav-item">
-          <NavLink to="/" className="nav-link">
+          <NavLink 
+          to="/" className="nav-link"
+          onClick={()=>onButtonClick()}>
           <FaList/>
             <span className="link-text">categories</span>
           </NavLink>

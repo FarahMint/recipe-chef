@@ -1,5 +1,5 @@
 
-import React, { useReducer, useEffect} from 'react';
+import React, { useReducer, useEffect, useRef} from 'react';
 
 import { useHistory } from 'react-router'
 
@@ -12,6 +12,7 @@ import {initialState , Store, recipesReducer } from "./reducer"
 import { IAction, ICategory, IRecipeDetails} from "../interfaces";
 
 export function StoreProvider(props:any):JSX.Element{
+  const element  =  useRef<HTMLInputElement>(null);
 
   // *********** ROUTER ***********
   const history = useHistory();
@@ -282,6 +283,14 @@ export function StoreProvider(props:any):JSX.Element{
      }
     }
 
+    function onButtonClick () {
+  
+        if ( element.current) {
+          element.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        } 
+    }
+    
+
         return(
         <Store.Provider 
             value ={{ 
@@ -291,7 +300,9 @@ export function StoreProvider(props:any):JSX.Element{
                 toggleFavAction,
                 searchRecipes  ,
                 numOfRecipes,
-                total    
+                total ,
+                onButtonClick ,
+                element   
                 }}>
             {props.children}
         </Store.Provider>)

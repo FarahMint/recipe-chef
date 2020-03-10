@@ -17,9 +17,15 @@ export default function LandingPage(): JSX.Element  {
             
             <article 
             className="main-content" 
-            key={meal.idMeal}>    
-                <img src={meal.strMealThumb}
-                alt={meal.strMeal}/>
+            key={meal.idMeal}>  
+                <div className="aspect-ratio-box">
+                    <img
+                    src={meal.strMealThumb}
+                    alt={meal.strMeal}
+                    className= "element-to-stretch"
+                    />
+                </div>  
+             
                 
                 <div className="label">
                     <span className="badge">Recipe of the Day</span> 

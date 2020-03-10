@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 
  
 import {Store } from "../../store/reducer";
+ 
+ 
 
 import {  ICategory} from "../../interfaces";
 
 export default function CategoryList(): JSX.Element {
 
-    const {state, numOfRecipes }=useContext(Store);
-    
+    const {state, numOfRecipes, element }=useContext(Store);
+ 
     return (
-    <section className="container category-container">
+    <section className="container category-container" 
+        ref={element}>
         <h2>categories</h2>
         <p>recipes, guides and more</p>
         

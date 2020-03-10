@@ -284,7 +284,7 @@ background: rgba(25,25,25,.97);
    display:flex;
   flex-direction:column;
   text-align: center;
-  padding:10px;
+  
   box-shadow: 1px 1px 2px #ccc; 
   border-radius: 1rem;
 }
@@ -528,7 +528,7 @@ position:sticky;
     }
   
 }
- 
+ /* browser with width greater than 768px */
 @media(min-width:768px){
 
   .container {
@@ -561,7 +561,7 @@ position:sticky;
 }
 
   .grid-container{
-    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
   }
   
    .grid-container .item .img{
@@ -574,14 +574,6 @@ position:sticky;
 .grid-container .item.favourite{
   max-width: 255px;
 }
-}
-
-
-
-/* add landpage working on... */
-.landpage-container{
-  padding-bottom: 5rem;
-  padding-top:0;
 }
 
 .main-content{
@@ -600,6 +592,8 @@ position:sticky;
  .categorie-available > svg {
   align-self: center;
  margin-right:.15rem;
+ color:var(--primary-color);
+ font-size: 1.75rem;
 }
 
 
@@ -625,21 +619,54 @@ position:sticky;
 }
 
  /* LANDING PAGE*/
+
+.landpage-container{
+  padding-bottom: 5rem;
+  padding-top:0;
+}
+
+ .main-content{
+     position: relative;
+     width: 100%;
+ 
+    }
+    
+    /* Position child elements relative to this element */
+    .aspect-ratio-box {
+      position: relative;
+      width: 100%;
+      max-height: calc(100vh - 150px);
+}
+
+/* Create a pseudo element that uses padding-bottom to take up space */
+.aspect-ratio-box::after {
+  display: block;
+  content: '';
+  /* 16:9 aspect ratio */
+  padding-top: 56.25%;
+}
+
  .main-content img{
     width: 100%;
     max-height: calc(100vh - 200px);
     overflow: hidden;
 }
 
-.main-content img {
-    position: relative;
-    width: 100%;
-    vertical-align: center;
- 
+/* Image is positioned absolutely relative to the parent element */
+.aspect-ratio-box img {
+  /* Image should match parent box size */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
+ 
+
+
 
 .label {
-  background-color: var(--primary-color);
+  background-color: var( --primary-color);
   width: 100%;
   padding: 0.25rem;
 
@@ -729,7 +756,7 @@ position:sticky;
     right: 0;
 }
 .categorie-available{
-  bottom: 2rem;
+  bottom: 5rem;
  }
 
 }
@@ -785,10 +812,11 @@ position:sticky;
   }
 
   .label {
-    width: 180px;
+    background-color: var(--mainWhite);
+    width: 320px;
     min-height: 180px;
     position: absolute;
-    bottom: 50%;
+    bottom: 20%;
     right: 5%;
   }
 
